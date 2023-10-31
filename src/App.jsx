@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import './App.css';
+import Card from './components/Card';
+
+const websites = [
+  {
+    name:'Youtube',
+    url: 'https://www.youtube.com',
+    imageSrc: 'youtube-logo.png',
+    altText:'Youtube'
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com',
+    imageSrc: 'github-logo.png',
+    altText: 'GitHub',
+  },
+  {
+    name: 'ChatGPT',
+    url: 'https://www.chatgpt.com',
+    imageSrc: 'chatgpt-logo.png',
+    altText: 'ChatGPT Open AI',
+  },
+  {
+    name: 'LAVC Canvas',
+    url: 'https://sso.laccd.edu/adfs/ls/idpinitiatedsignon.aspx?loginToRp=csprd.laccd.edu',
+    imageSrc: 'school-logo.png',
+    altText: 'LAVC Canvas',
+  },
+  // Add more websites as needed
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div id="root">
+      <h4>Website cards for GitHub, ChatGPT, School, etc.</h4>
+      <div className="card-grid">
+        {websites.map((website, index) => (
+          <Card key={index} {...website} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

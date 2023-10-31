@@ -5,38 +5,42 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the size to your preference */
+  gap: 20px;
+  justify-items: center;
 }
 
 .card {
-  padding: 2em;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  width: 200px; /* Set the width and height to the same value */
+  height: 200px; /* Adjust the size to your preference */
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 100%;
+}
+
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust the size to match the screen ratio */
+  }
+
+  .card {
+    width: 100%; /* Occupy the full width of the screen */
+    height: auto; /* Auto height */
+  }
 }
