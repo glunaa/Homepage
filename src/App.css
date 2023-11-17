@@ -7,20 +7,18 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the size to your preference */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   justify-items: center;
 }
 
 .card {
-  justify-content: center;
   background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
   transition: transform 0.2s;
-  width: 200px; /* Set the width and height to the same value */
-  height: 200px; /* Adjust the size to your preference */
 }
 
 .card:hover {
@@ -31,16 +29,10 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  max-height: 100%;
 }
 
 @media (max-width: 767px) {
   .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust the size to match the screen ratio */
-  }
-
-  .card {
-    width: 100%; /* Occupy the full width of the screen */
-    height: auto; /* Auto height */
+    grid-template-columns: repeat(2,minmax(0, 1fr)); /* 2 columns for screens smaller than 767px */
   }
 }
